@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>{% block title%} Default title {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css'%}">
+    </head>
+
+    <body>
+    {% block content%}
+    <ul>
+    <li> <a href="{% url 'home' %}">Home</a></li>
+    <li> <a href="{% url 'about' %}">About</a></li>
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+
+    <img src="{% static 'images/slika1.jpg' %}">
+
+    {% block head%}
+    <h1>Default heading - generoic stuff</h1>
+    {% endblock%}
+
+
+    {% block para%}
+    <p1>Lorem ipsum</p1>
+    {% endblock%}
+
+    {% endblock%}
+    </body>
+
+</html>
